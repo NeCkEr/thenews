@@ -9,4 +9,4 @@
 
 (set! *main-cli-fn*
       (fn []
-        (core/start-app false 3000)))
+        (core/start-app false 8080)))
