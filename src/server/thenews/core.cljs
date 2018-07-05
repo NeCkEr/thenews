@@ -5,10 +5,24 @@
 (defonce express (nodejs/require "express"))
 (defonce serve-static (nodejs/require "serve-static"))
 
+
+
+(def new-object {:beep "boop"})
+
+asdasd
+
+asd
+
+#_(defn test 
+  [a b]
+  (println a b))
+
+#_(test "eu sou o a " "e eu sou o b")
+
 (defn create-app
   [dev?]
   (let [app (express)]
-    (.get app "/health" (fn [req res] (.send res "ok")))
+    (.get app "/health" (fn [req res] (.send res (:beep new-object))))
     (.use app (serve-static "resources/public"))
     app))
 
