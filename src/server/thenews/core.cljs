@@ -9,10 +9,6 @@
 
 (def new-object {:beep "boop"})
 
-asdasd
-
-asd
-
 #_(defn test 
   [a b]
   (println a b))
@@ -22,7 +18,7 @@ asd
 (defn create-app
   [dev?]
   (let [app (express)]
-    (.get app "/health" (fn [req res] (.send res (:beep new-object))))
+    (.get app "/health" (fn [req res] (.send res "hello")))
     (.use app (serve-static "resources/public"))
     app))
 
