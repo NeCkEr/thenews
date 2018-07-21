@@ -5,16 +5,6 @@
 (defonce express (nodejs/require "express"))
 (defonce serve-static (nodejs/require "serve-static"))
 
-
-
-(def new-object {:beep "boop"})
-
-#_(defn test 
-  [a b]
-  (println a b))
-
-#_(test "eu sou o a " "e eu sou o b")
-
 (defn create-app
   [dev?]
   (let [app (express)]
