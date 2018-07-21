@@ -5,10 +5,20 @@
 (defonce express (nodejs/require "express"))
 (defonce serve-static (nodejs/require "serve-static"))
 
+(defn jonas?
+  [req res]
+  (.send res "jonas?")
+                              )
+
 (defn create-app
   [dev?]
   (let [app (express)]
+    
     (.get app "/health" (fn [req res] (.send res "hello")))
+
+    (.get app "/helloworld" jonas?)
+
+
     (.use app (serve-static "resources/public"))
     app))
 
